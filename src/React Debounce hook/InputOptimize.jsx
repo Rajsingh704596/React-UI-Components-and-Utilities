@@ -7,7 +7,7 @@ function InputOptimize() {
    
     const [search,setSearch] = useState("");
 
-   const debounceValue= useDebounce(search,2000);     //here we call custom hook 
+   const debounceValue= useDebounce(search,2000);     //here we call custom hook where input value or delay time pass 
 
   return (
     <>

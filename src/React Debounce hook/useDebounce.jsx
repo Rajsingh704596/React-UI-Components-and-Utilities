@@ -1,5 +1,6 @@
 //Debounce - It wait until the event stop firing for a special delay then fun execute , ( fun trigger after a pause of user interaction)
 //{useCase e.g input field, Search, keypress events}
+// user ki last wali interaction pr fun. call lgti hai delay end hone pr , phle wali miss hoti hai
 
 import { useCallback,  useState } from "react";
 // import { useEffect } from "react";
@@ -22,6 +23,7 @@ export default function useDebounce(value,delay) {
 //             clearTimeout(timerId);
 //           }   
 //     },[value,delay])
+//  return debounceValue;
 
   // ^ 2nd way here we call generic debounceFun(traditional fun) without useEffect
 
@@ -45,7 +47,7 @@ function debounce(callback, delay){             //higher order fun. create which
     let timerId;                                   
     return function debouncedFun(...args){
         if(timerId){
-            clearTimeout(timerId);         //for clear previous timeoutif a new event is triggered  using closure   (closure inner fun know the value(timerId) of outer fun)
+            clearTimeout(timerId);         //for clear previous timeout if a new event is triggered  using closure   (closure inner fun know the value(timerId) of outer fun)
         }
     // Set a new timeout for the callback
        timerId= setTimeout(()=>{

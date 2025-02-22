@@ -2,7 +2,13 @@
 // import Pagination2 from "./Pagination/Pagination2"
 // import Pagination3 from "./Pagination/Pagination3"
 
-import InputOptimize from "./React Debounce hook/inputOptimize"
+import LastInteractionInThrottle from "./Throttling/withoutUseEffect/LastInteractionInThrottle"
+
+// import ThrottlingWithoutUseEffectExample from "./Throttling/withoutUseEffect/ThrottlingWithOutUseEffect.jsx"
+
+// import { Throttling } from "./Throttling/Throttling"
+
+// import InputOptimize from "./React Debounce hook/inputOptimize"
 
 
 function App() {
@@ -12,7 +18,12 @@ function App() {
      {/* <Pagination2/>   */}
      {/* <Pagination3/>   */}
 
-      <InputOptimize/>
+      {/* <InputOptimize/> */}
+
+      {/* <Throttling/> */}
+      {/* <ThrottlingWithoutUseEffectExample/> */}
+      <LastInteractionInThrottle/>
+
 
     </>
   )
