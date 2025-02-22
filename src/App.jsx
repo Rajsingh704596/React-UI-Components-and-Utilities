@@ -2,13 +2,15 @@
 // import Pagination2 from "./Pagination/Pagination2"
 // import Pagination3 from "./Pagination/Pagination3"
 
-import LastInteractionInThrottle from "./Throttling/withoutUseEffect/LastInteractionInThrottle"
-
-// import ThrottlingWithoutUseEffectExample from "./Throttling/withoutUseEffect/ThrottlingWithOutUseEffect.jsx"
-
-// import { Throttling } from "./Throttling/Throttling"
+import  {InfiniteScroll}  from "./Infinite Scroll/InfiniteScroll"
 
 // import InputOptimize from "./React Debounce hook/inputOptimize"
+
+// import { Throttling } from "./Throttling/Throttling"
+// import ThrottlingWithoutUseEffectExample from "./Throttling/withoutUseEffect/ThrottlingWithOutUseEffect.jsx"
+// import LastInteractionInThrottle from "./Throttling/withoutUseEffect/LastInteractionInThrottle"
+
+
 
 
 function App() {
@@ -22,7 +24,11 @@ function App() {
 
       {/* <Throttling/> */}
       {/* <ThrottlingWithoutUseEffectExample/> */}
-      <LastInteractionInThrottle/>
+      {/* <LastInteractionInThrottle/> */}
+
+      <InfiniteScroll/>
+
+
 
 
     </>

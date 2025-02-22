@@ -2,29 +2,46 @@
 // we have multiple functionality but here we useRef hook to perform this task
 //*In Throttle case user first interaction pr fun. call lagti hai , last wali nhi lgti hai uss ek sec m 
 
-// import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
-// // custom hook fun use to take value and return throttle value
-// export default function useThrottling(value, delay) {
+// custom hook fun use to take value and return throttle value
+export default function useThrottling(value, delay) {
 
-//     const[throttleValue, setThrottleValue]=useState(value)
+    const[throttleValue, setThrottleValue]=useState(value)
 
-//     const lastExecuted = useRef(Date.now());
+//@ 1st way
+    // const lastExecuted = useRef(Date.now());
     
-
-//     useEffect(() => {
-//       const handler = setTimeout(() => {
-//         const now = Date.now();
-//         if (now - lastExecuted.current >= delay) {
-//           setThrottleValue(value);
-//           lastExecuted.current = now;
-//         }
-//       }, delay - (Date.now() - lastExecuted.current));
+    // useEffect(() => {
+    //   const handler = setTimeout(() => {
+    //     const now = Date.now();
+    //     if (now - lastExecuted.current >= delay) {
+    //       setThrottleValue(value);
+    //       lastExecuted.current = now;
+    //     }
+    //   }, delay - (Date.now() - lastExecuted.current));
   
-//       return () => clearTimeout(handler);
-//     }, [value, delay]);
+    //   return () => clearTimeout(handler);
+    // }, [value, delay]);
 
-//   return throttleValue;
-// }
+ //@ 2nd Way   
+    const flagRef = useRef(true);
+
+        useEffect(()=>{
+        if(flagRef.current){
+            setThrottleValue(value);
+            flagRef.current=false;
+
+            setTimeout(()=>{
+                flagRef.current=true;
+            },delay);
+        }
+   },[value,delay])
+
+  return throttleValue;
+}
+
+
+
 
 
